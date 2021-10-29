@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Table(name = "mobile_table")
 @Entity
 public class MobileEntity {
-
+	
 	@Id
 	@Column(name = "MOBILE_ID")
 	private int mobileID;
@@ -45,6 +45,9 @@ public class MobileEntity {
 		this.cameraSize = cameraSize;
 		this.isFingerPrintSupported = isFingerPrintSupported;
 		this.osType = osType;
+	}
+	public MobileEntity() {
+		System.out.println("default constructor invoked");
 	}
 
 	public int getMobileID() {
@@ -109,6 +112,12 @@ public class MobileEntity {
 
 	public void setOsType(String osType) {
 		this.osType = osType;
+	}
+	@Override
+	public String toString() {
+		return "MobileEntity [mobileID=" + mobileID + ", mobileBrand=" + mobileBrand + ", mobilePrice=" + mobilePrice
+				+ ", rom=" + rom + ", color=" + color + ", cameraSize=" + cameraSize + ", isFingerPrintSupported="
+				+ isFingerPrintSupported + ", osType=" + osType + "]";
 	}
 
 }
